@@ -45,8 +45,8 @@ def lcs_tabulation(x, y):
 
 	dp = [[0 for c in range(N+1)] for r in range(M+1)]
 
-	for i in range(M):
-		for j in range(N):
+	for i in range(M+1):
+		for j in range(N+1):
 			if i == 0 or j == 0:
 				dp[i][j] = 0
 			elif M[i] == M[j]:

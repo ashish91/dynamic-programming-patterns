@@ -10,8 +10,8 @@ def print_lcs(x, y):
 	dp = [[0 for c in range(N+1)] for r in range(M+1)]
 
 	# Time Complexity: O(MN)
-	for r in range(M):
-		for c in range(N):
+	for r in range(M+1):
+		for c in range(N+1):
 			if r == 0 or c == 0:
 				dp[r][c] = 0
 			elif x[r] == y[c]:
