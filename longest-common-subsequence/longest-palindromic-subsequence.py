@@ -19,12 +19,3 @@ def lps_tabulation(s):
 
 	return dp[M][N]
 
-
-#   @ a g b c b a
-# @
-# a
-# b
-# c
-# b
-# g
-# a
