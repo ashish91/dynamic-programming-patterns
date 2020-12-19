@@ -19,6 +19,7 @@ def knapsack(weights, values, C):
 def knapsack(weights, values, C):
 	mem = [[-1 for c in range(len(weights)+1)] for r in range(C+1)]
 	def knapsack_memoized(n, w, weights, values):
+		nonlocal mem
 		if (n == 0 or w == 0):
 			return 0
 
