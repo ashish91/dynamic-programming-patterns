@@ -43,7 +43,7 @@ def lcs_tabulation(x, y):
 	M = len(x)
 	N = len(y)
 
-	dp = [[0 for c in range(M+1)] for r in range(N+1)]
+	dp = [[0 for c in range(N+1)] for r in range(M+1)]
 
 	for i in range(M):
 		for j in range(N):
