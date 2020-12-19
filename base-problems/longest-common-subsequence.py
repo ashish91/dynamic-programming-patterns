@@ -35,3 +35,24 @@ def lcs(x, y):
 			mem[r][c] = max(lcs_memoized(x, y, r-1, c), lcs_memoized(x, y, r, c-1))
 
 	return lcs_memoized(x, y, R, C)
+
+# X: a b c d g h
+# Y: a b e d f h r
+# Top Down Tabulation
+def lcs_tabulation(x, y):
+	M = len(x)
+	N = len(y)
+
+	dp = [[0 for c in range(M+1)] for r in range(N+1)]
+
+	for i in range(M):
+		for j in range(N):
+			if i == 0 or j == 0:
+				dp[i][j] = 0
+			elif M[i] == M[j]:
+				dp[i][j] = 1 + dp[i-1][j-1]
+			else:
+				dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+
+	return dp[M][N]
+
