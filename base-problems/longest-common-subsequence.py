@@ -1,7 +1,7 @@
 # X: a b c d g h
 # Y: a b e d f h r
 #
-# Write down a Recursive Solution
+# Recursive Solution
 def lcs_recursive(x, y, r, c):
 	if r == 0 || c == 0:
 		return 0
