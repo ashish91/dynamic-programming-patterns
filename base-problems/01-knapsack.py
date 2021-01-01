@@ -1,7 +1,7 @@
 # weights: 10  5 2  9 24
 # values :  8 10 1 18 20
 #
-# Write down a Recursive Solution
+# Recursive Solution
 def knapsack_recursive(n, w, weights, values):
   if (n == 0 or w == 0):
     return 0
@@ -37,6 +37,10 @@ def knapsack(weights, values, C):
   knapsack_memoized(len(weights), C, weights, values)
 
 # Top Down Tabulation
+#
+# States: Weight, Number of Items
+# T[n][w] = max(T[n-1][w], T[n-1][w-W[n-1]] + V[n-1]) if W[n-1] <= w
+#         = T[n-1][w]                                 else cannot pick item
 def knapsack_tabulation(weights, values, capacity):
   W = capacity
   N = len(values)
