@@ -3,21 +3,21 @@
 #
 # Top Down Tabulation
 def insert_delete_lcs(x, y):
-	M = len(x)
-	N = len(y)
+  M = len(x)
+  N = len(y)
 
-	dp = [[0 for c in range(N+1)] for r in range(M+1)]
+  dp = [[0 for c in range(N+1)] for r in range(M+1)]
 
-	for r in range(M+1):
-		for c in range(N+1):
-			if r == 0 or c == 0:
-				dp[r][c] = max(r, c)
-			elif x[r-1] == y[c-1]:
-				dp[r][c] = dp[r-1][c-1]
-			else:
-				dp[r][c] = min(dp[r-1][c], dp[r][c-1]) + 1
+  for r in range(M+1):
+    for c in range(N+1):
+      if r == 0 or c == 0:
+        dp[r][c] = max(r, c)
+      elif x[r-1] == y[c-1]:
+        dp[r][c] = dp[r-1][c-1]
+      else:
+        dp[r][c] = min(dp[r-1][c], dp[r][c-1]) + 1
 
-	return dp[M][N]
+  return dp[M][N]
 
 #   @ h e a p
 # @ 0 1 2 3 4
