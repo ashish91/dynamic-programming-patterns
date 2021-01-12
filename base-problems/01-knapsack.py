@@ -1,3 +1,5 @@
+# Given a knapsack with total capacity C, return the maximum profit by selecting a subset of items.
+# 
 # weights: 10  5 2  9 24
 # values :  8 10 1 18 20
 #
@@ -36,7 +38,7 @@ def knapsack(weights, values, C):
 
   knapsack_memoized(len(weights), C, weights, values)
 
-# Top Down Tabulation
+# Bottom Up Tabulation
 #
 # States: Weight, Number of Items
 # T[n][w] = max(T[n-1][w], T[n-1][w-W[n-1]] + V[n-1]) if W[n-1] <= w
